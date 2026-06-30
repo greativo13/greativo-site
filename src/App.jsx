@@ -30,7 +30,7 @@ function NavBar() {
     { href: "#kapcsolat", label: "Kapcsolat" },
   ];
   return (
-    <header className="sticky top-0 z-50 border-b border-navy/10 bg-cream/90 backdrop-blur">
+    <header className="sticky top-0 z-50 border-b border-silver bg-cream/90 backdrop-blur">
       <nav className="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
         <a href="#" className="flex items-center gap-2">
           <img src="/logo.png" alt="Greativo" className="h-10 w-10 object-contain" />
@@ -134,7 +134,7 @@ function Services() {
         {services.map(({ icon: Icon, title, items, result }) => (
           <div
             key={title}
-            className="rounded-2xl border border-navy/10 bg-white p-6 shadow-sm transition hover:shadow-md"
+            className="rounded-2xl border border-silver bg-white p-6 shadow-sm transition hover:shadow-md"
           >
             <div className="flex items-center gap-3">
               <span className="flex h-10 w-10 items-center justify-center rounded-full bg-navy/5 text-accent">
@@ -200,7 +200,7 @@ function References() {
           {references.map(({ icon: Icon, title, text, images }) => (
             <div
               key={title}
-              className="rounded-2xl border border-navy/10 bg-white p-6 shadow-sm sm:p-8"
+              className="rounded-2xl border border-silver bg-white p-6 shadow-sm sm:p-8"
             >
               <div className="flex items-center gap-3">
                 <span className="flex h-9 w-9 items-center justify-center rounded-full bg-accent/10 text-accent">
@@ -219,7 +219,7 @@ function References() {
                 }`}
               >
                 {images.map((src) => (
-                  <div key={src} className="overflow-x-auto rounded-xl border border-navy/10 shadow-sm">
+                  <div key={src} className="overflow-x-auto rounded-xl border border-silver shadow-sm">
                     <img
                       src={src}
                       alt={title}
@@ -289,7 +289,7 @@ function Packages() {
             className={`flex flex-col rounded-2xl border p-6 shadow-sm ${
               p.highlight
                 ? "border-accent bg-navy text-white"
-                : "border-navy/10 bg-white"
+                : "border-silver bg-white"
             }`}
           >
             {p.highlight && (

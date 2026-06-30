@@ -9,9 +9,10 @@ export default {
         cream: "#FAFAF8",
         charcoal: "#262626",
         muted: "#6B7280",
+        silver: "#C7CCD6",
       },
       fontFamily: {
-        display: ["'Plus Jakarta Sans'", "sans-serif"],
+        display: ["'Playfair Display'", "serif"],
         body: ["'Inter'", "sans-serif"],
       },
     },
