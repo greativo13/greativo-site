@@ -41,7 +41,7 @@ function NavBar() {
         <ul className="hidden gap-8 text-sm font-medium text-charcoal/80 sm:flex">
           {links.map((l) => (
             <li key={l.href}>
-              <a href={l.href} className="transition hover:text-forest">
+              <a href={l.href} className="transition hover:text-accent">
                 {l.label}
               </a>
             </li>
@@ -49,7 +49,7 @@ function NavBar() {
         </ul>
         <a
           href="#kapcsolat"
-          className="rounded-full bg-navy px-4 py-2 text-xs font-semibold text-white transition hover:bg-forest sm:text-sm"
+          className="rounded-full bg-navy px-4 py-2 text-xs font-semibold text-white transition hover:bg-accent sm:text-sm"
         >
           Kapcsolat
         </a>
@@ -62,7 +62,7 @@ function Hero() {
   return (
     <section className="mx-auto max-w-5xl px-6 pb-20 pt-16 sm:pt-24">
       <StatusPill>Adminisztrációs rend, garantáltan</StatusPill>
-      <p className="mt-6 text-sm font-semibold uppercase tracking-wide text-forest">
+      <p className="mt-6 text-sm font-semibold uppercase tracking-wide text-accent">
         Greativo — Virtuális Asszisztencia
       </p>
       <h1 className="mt-2 max-w-3xl font-display text-4xl font-extrabold leading-[1.1] text-navy sm:text-5xl">
@@ -75,7 +75,7 @@ function Hero() {
       </p>
       <a
         href="#kapcsolat"
-        className="mt-8 inline-block rounded-full bg-navy px-7 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-forest"
+        className="mt-8 inline-block rounded-full bg-navy px-7 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-accent"
       >
         Kérek egy ingyenes állapotfelmérést
       </a>
@@ -137,7 +137,7 @@ function Services() {
             className="rounded-2xl border border-navy/10 bg-white p-6 shadow-sm transition hover:shadow-md"
           >
             <div className="flex items-center gap-3">
-              <span className="flex h-10 w-10 items-center justify-center rounded-full bg-navy/5 text-forest">
+              <span className="flex h-10 w-10 items-center justify-center rounded-full bg-navy/5 text-accent">
                 <Icon size={20} strokeWidth={2} />
               </span>
               <h3 className="font-display text-lg font-semibold text-navy">
@@ -147,13 +147,13 @@ function Services() {
             <ul className="mt-4 space-y-2 text-sm leading-relaxed text-charcoal/80">
               {items.map((it) => (
                 <li key={it} className="flex gap-2">
-                  <span className="mt-2 h-1 w-1 flex-shrink-0 rounded-full bg-forest" />
+                  <span className="mt-2 h-1 w-1 flex-shrink-0 rounded-full bg-accent" />
                   <span>{it}</span>
                 </li>
               ))}
             </ul>
             {result && (
-              <p className="mt-4 text-sm font-semibold text-forest">{result}</p>
+              <p className="mt-4 text-sm font-semibold text-accent">{result}</p>
             )}
           </div>
         ))}
@@ -203,7 +203,7 @@ function References() {
               className="rounded-2xl border border-navy/10 bg-white p-6 shadow-sm sm:p-8"
             >
               <div className="flex items-center gap-3">
-                <span className="flex h-9 w-9 items-center justify-center rounded-full bg-forest/10 text-forest">
+                <span className="flex h-9 w-9 items-center justify-center rounded-full bg-accent/10 text-accent">
                   <Icon size={18} strokeWidth={2} />
                 </span>
                 <h3 className="font-display text-lg font-semibold text-navy">
@@ -288,12 +288,12 @@ function Packages() {
             key={p.name}
             className={`flex flex-col rounded-2xl border p-6 shadow-sm ${
               p.highlight
-                ? "border-forest bg-navy text-white"
+                ? "border-accent bg-navy text-white"
                 : "border-navy/10 bg-white"
             }`}
           >
             {p.highlight && (
-              <span className="mb-3 inline-block w-fit rounded-full bg-forest px-3 py-1 text-xs font-semibold text-white">
+              <span className="mb-3 inline-block w-fit rounded-full bg-accent px-3 py-1 text-xs font-semibold text-white">
                 Legnépszerűbb
               </span>
             )}
@@ -306,7 +306,7 @@ function Packages() {
             </h3>
             <p
               className={`mt-1 text-lg font-semibold ${
-                p.highlight ? "text-white" : "text-forest"
+                p.highlight ? "text-white" : "text-accent"
               }`}
             >
               {p.price}
@@ -327,7 +327,7 @@ function Packages() {
                 <li key={it} className="flex gap-2">
                   <span
                     className={`mt-2 h-1 w-1 flex-shrink-0 rounded-full ${
-                      p.highlight ? "bg-white" : "bg-forest"
+                      p.highlight ? "bg-white" : "bg-accent"
                     }`}
                   />
                   <span>{it}</span>
@@ -342,7 +342,7 @@ function Packages() {
         állapotfelmérés után. 50% előleg, a fennmaradó rész a hónap végén
         esedékes.
       </p>
-      <p className="mt-2 max-w-2xl text-sm font-semibold text-forest">
+      <p className="mt-2 max-w-2xl text-sm font-semibold text-accent">
         Nincs hosszú távú elköteleződés — bármelyik csomag hónap végén
         lemondható.
       </p>
@@ -373,7 +373,7 @@ function Contact() {
           </a>
           <a
             href="mailto:greativo13@gmail.com"
-            className="flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-navy transition hover:bg-forest hover:text-white"
+            className="flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-navy transition hover:bg-accent hover:text-white"
           >
             <Mail size={16} /> greativo13@gmail.com
           </a>
