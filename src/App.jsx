@@ -27,6 +27,7 @@ function NavBar() {
     { href: "#szolgaltatasok", label: "Szolgáltatások" },
     { href: "#referenciak", label: "Referenciák" },
     { href: "#csomagok", label: "Csomagok" },
+    { href: "#gyik", label: "GYIK" },
     { href: "#kapcsolat", label: "Kapcsolat" },
   ];
   return (
@@ -350,6 +351,59 @@ function Packages() {
   );
 }
 
+const faqs = [
+  {
+    q: "Hogyan kezdődik a közös munka?",
+    a: "Egy rövid, ingyenes állapotfelmérő beszélgetéssel indulunk, ahol átnézzük, mely feladatok viszik el a legtöbb időt. Ez alapján javaslok csomagot, és egyeztetjük a részleteket, mielőtt elindul a munka.",
+  },
+  {
+    q: "Milyen eszközökkel dolgozol?",
+    a: "A leggyakoribbak: Notion, Google Workspace (Gmail, Naptár, Drive), Canva, és a számlázási/CRM rendszer, amit te már használsz. Nem kell váltanod — a meglévő eszközeidre építünk.",
+  },
+  {
+    q: "Biztonságban vannak az adataim?",
+    a: "Igen. Minden ügyfél adatait bizalmasan kezelem, és igény esetén titoktartási nyilatkozatot (NDA) is aláírok a munka megkezdése előtt.",
+  },
+  {
+    q: "Mi van, ha menet közben szeretnék váltani vagy lemondani?",
+    a: "Bármelyik csomag hónap végén, kötöttség nélkül lemondható vagy módosítható — nincs hosszú távú szerződéses elköteleződés.",
+  },
+  {
+    q: "Csak coachoknak és tanácsadóknak dolgozol?",
+    a: "Elsősorban rájuk specializálódtam, mert ismerem a tipikus adminisztrációs fájdalompontjaikat, de ha más vállalkozóként hasonló kihívásokkal küzdesz, írj nyugodtan — megnézzük, illik-e a profilra.",
+  },
+];
+
+function FAQ() {
+  return (
+    <section id="gyik" className="bg-navy/[0.03] py-20">
+      <div className="mx-auto max-w-5xl px-6">
+        <h2 className="font-display text-2xl font-bold text-navy sm:text-3xl">
+          Gyakori kérdések
+        </h2>
+        <div className="mt-10 space-y-4">
+          {faqs.map(({ q, a }) => (
+            <details
+              key={q}
+              className="group rounded-2xl border border-silver bg-white p-6 shadow-sm"
+            >
+              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-display text-lg font-semibold text-navy">
+                {q}
+                <span className="flex-shrink-0 text-accent transition group-open:rotate-45">
+                  +
+                </span>
+              </summary>
+              <p className="mt-3 text-sm leading-relaxed text-charcoal/80">
+                {a}
+              </p>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function Contact() {
   return (
     <section id="kapcsolat" className="bg-navy py-20 text-white">
@@ -410,6 +464,7 @@ export default function App() {
       <Services />
       <References />
       <Packages />
+      <FAQ />
       <Contact />
       <Footer />
     </div>
