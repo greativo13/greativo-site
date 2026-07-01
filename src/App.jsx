@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Mail,
   Instagram,
@@ -11,6 +11,8 @@ import {
   Wallet,
   Plane,
   ClipboardCheck,
+  Menu,
+  X,
 } from "lucide-react";
 
 function StatusPill({ children }) {
@@ -23,6 +25,7 @@ function StatusPill({ children }) {
 }
 
 function NavBar() {
+  const [open, setOpen] = useState(false);
   const links = [
     { href: "#szolgaltatasok", label: "Szolgáltatások" },
     { href: "#referenciak", label: "Referenciák" },
@@ -34,7 +37,7 @@ function NavBar() {
     <header className="sticky top-0 z-50 border-b border-silver bg-cream/90 backdrop-blur">
       <nav className="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
         <a href="#" className="flex items-center gap-2">
-          <img src="/logo.png" alt="Greativo" className="h-10 w-10 object-contain" />
+          <img src="/logo.png" alt="Greativo" className="h-9 w-9 object-contain" />
           <span className="font-display text-lg font-extrabold tracking-tight text-navy">
             GREATIVO
           </span>
@@ -48,13 +51,46 @@ function NavBar() {
             </li>
           ))}
         </ul>
-        <a
-          href="#kapcsolat"
-          className="rounded-full bg-navy px-4 py-2 text-xs font-semibold text-white transition hover:bg-accent sm:text-sm"
-        >
-          Kapcsolat
-        </a>
+        <div className="flex items-center gap-3">
+          <a
+            href="#kapcsolat"
+            className="hidden rounded-full bg-navy px-4 py-2 text-xs font-semibold text-white transition hover:bg-accent sm:block sm:text-sm"
+          >
+            Kapcsolat
+          </a>
+          <button
+            onClick={() => setOpen(!open)}
+            className="flex items-center justify-center rounded-lg p-2 text-navy transition hover:bg-navy/5 sm:hidden"
+            aria-label="Menü"
+          >
+            {open ? <X size={22} /> : <Menu size={22} />}
+          </button>
+        </div>
       </nav>
+      {open && (
+        <div className="border-t border-silver bg-cream/95 px-6 py-4 sm:hidden">
+          <ul className="flex flex-col gap-4 text-sm font-medium text-charcoal/80">
+            {links.map((l) => (
+              <li key={l.href}>
+                <a
+                  href={l.href}
+                  onClick={() => setOpen(false)}
+                  className="block py-1 transition hover:text-accent"
+                >
+                  {l.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+          <a
+            href="#kapcsolat"
+            onClick={() => setOpen(false)}
+            className="mt-4 inline-block rounded-full bg-navy px-6 py-2.5 text-sm font-semibold text-white transition hover:bg-accent"
+          >
+            Kapcsolat
+          </a>
+        </div>
+      )}
     </header>
   );
 }
@@ -127,7 +163,7 @@ const services = [
 
 function Services() {
   return (
-    <section id="szolgaltatasok" className="mx-auto max-w-5xl px-6 py-20">
+    <section id="szolgaltatasok" className="mx-auto max-w-5xl px-6 py-12 sm:py-20">
       <h2 className="font-display text-2xl font-bold text-navy sm:text-3xl">
         Szolgáltatások
       </h2>
@@ -192,7 +228,7 @@ const references = [
 
 function References() {
   return (
-    <section id="referenciak" className="bg-navy/[0.03] py-20">
+    <section id="referenciak" className="bg-navy/[0.03] py-12 sm:py-20">
       <div className="mx-auto max-w-5xl px-6">
         <h2 className="font-display text-2xl font-bold text-navy sm:text-3xl">
           Referenciák
@@ -279,7 +315,7 @@ const packages = [
 
 function Packages() {
   return (
-    <section id="csomagok" className="mx-auto max-w-5xl px-6 py-20">
+    <section id="csomagok" className="mx-auto max-w-5xl px-6 py-12 sm:py-20">
       <h2 className="font-display text-2xl font-bold text-navy sm:text-3xl">
         Csomagok
       </h2>
@@ -376,7 +412,7 @@ const faqs = [
 
 function FAQ() {
   return (
-    <section id="gyik" className="bg-navy/[0.03] py-20">
+    <section id="gyik" className="bg-navy/[0.03] py-12 sm:py-20">
       <div className="mx-auto max-w-5xl px-6">
         <h2 className="font-display text-2xl font-bold text-navy sm:text-3xl">
           Gyakori kérdések
@@ -406,7 +442,7 @@ function FAQ() {
 
 function Contact() {
   return (
-    <section id="kapcsolat" className="bg-navy py-20 text-white">
+    <section id="kapcsolat" className="bg-navy py-12 sm:py-20 text-white">
       <div className="mx-auto max-w-5xl px-6 text-center">
         <h2 className="font-display text-2xl font-bold sm:text-3xl">
           Vegyük fel a kapcsolatot
